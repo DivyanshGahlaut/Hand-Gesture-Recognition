@@ -41,6 +41,4 @@ A beautiful, real-time hand gesture recognition application built with React, Vi
 - `src/components/Header.tsx` & `src/components/Footer.tsx`: UI layout components.
 - `index.html`: Contains MediaPipe library scripts.
 
-## ⚠️ Note
 
-This project was refined to fix missing components and directory structure issues after being cloned. It now uses the MediaPipe JS API for reliable in-browser tracking.
