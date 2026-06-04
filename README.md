@@ -1,67 +1,46 @@
-# HandGesture-Recognition-CNN  
+# Hand Gesture Recognition System
 
-"DOMAIN" : Machine Learning
+A beautiful, real-time hand gesture recognition application built with React, Vite, and MediaPipe.
 
-*Project Description:
+## 🚀 Features
 
-This project focuses on building a Convolutional Neural Network (CNN) based deep learning model to recognize and classify hand gestures from static images. The primary goal is to enable real-time or batch gesture classification that can be integrated into gesture-based control systems, sign language interpretation, or human-computer interaction interfaces.
+- **Real-time Tracking**: Low-latency hand tracking using MediaPipe's WASM-based inference.
+- **Dual Hand Support**: Track up to two hands simultaneously.
+- **Gesture Classification**: Heuristic-based gesture recognition (Open Palm, Pointing, Fist).
+- **Modern UI**: Premium dark-mode interface with glassmorphism and smooth animations.
+- **Responsive Design**: Works on desktops and laptops with a webcam.
 
-The model is trained on the LeapGestRecog Dataset from Kaggle, which contains thousands of grayscale gesture images captured using a Leap Motion sensor. These images represent different static hand gestures, categorized into folders named 00 to 09.
+## 🛠️ Tech Stack
 
-🛠️ Tools & Technologies Used:
+- **React**: Frontend library for building the UI.
+- **Vite**: Ultra-fast build tool and development server.
+- **MediaPipe**: Cross-platform ML solution for hand and finger tracking.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Lucide React**: Beautiful icons for the interface.
 
- Category               Tools / Frameworks                                                                       
+## 🏁 Getting Started
 
-*Language**             Python                                                                                   
-*Libraries**            NumPy, OpenCV, TensorFlow, Keras                                                        
-*IDE**                  VS Code                                                                                  
-*Dataset Source**       [LeapGestRecog Dataset on Kaggle](https://www.kaggle.com/datasets/gti-upm/leapgestrecog) 
-*Model Architecture**   Convolutional Neural Network (CNN)                                                       
-*Image Preprocessing**  Resizing, Normalization (0-1), Grayscale   
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-⚙️ How It Works:
+2. **Run Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-1.Data Collection & Preparation:
+3. **Open in Browser**:
+   Navigate to `http://localhost:5173`
 
-Dataset downloaded from Kaggle.
+## 📂 Project Structure
 
-The dataset contains 10 gesture classes (00 to 09) with each class having images stored in individual folders.
+- `src/main.tsx`: Entry point.
+- `src/App.tsx`: Main application layout.
+- `src/components/HandGestureRecognition.tsx`: Core MediaPipe integration.
+- `src/components/Header.tsx` & `src/components/Footer.tsx`: UI layout components.
+- `index.html`: Contains MediaPipe library scripts.
 
-Data is split into training and testing folders (train/, test/) or restructured using a Python script if needed.
+## ⚠️ Note
 
-2.Data Preprocessing:
-
-All images are resized to 64x64 pixels.
-
-Pixel values are normalized (divided by 255) to improve model convergence.
-
-Image data is reshaped for model input as (batch, height, width, channels).
-
-3.Model Architecture (CNN):
-
-Several convolutional and pooling layers.
-
-Flatten layer followed by dense layers.
-
-Final softmax output layer for classification of 10 gesture classes.
-
-5.Training:
-
-Model is compiled using categorical_crossentropy and adam optimizer.
-
-Trained for a number of epochs on the preprocessed training dataset.
-
-6.Prediction:
-
-A predict.py script is used to load the trained model and predict the gesture class of a test image.
-
-Uses OpenCV to read and preprocess the image before feeding it into the model.
-
-#Dataset Link:
- 
-LeapGestRecog Dataset
-https://www.kaggle.com/datasets/gti-upm/leapgestrecog
-
-#OUTPUT:
-
-![Image](https://github.com/user-attachments/assets/c102cf60-1cc3-49d4-8c97-a2f2a52fc708)
+This project was refined to fix missing components and directory structure issues after being cloned. It now uses the MediaPipe JS API for reliable in-browser tracking.
